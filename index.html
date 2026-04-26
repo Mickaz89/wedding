@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#b25a32" />
+    <title>Ilan & Sarah — 23 Juin</title>
+    <meta name="description" content="C'est avec une immense joie que nous vous invitons à célébrer notre mariage — Mardi 23 Juin." />
+
+    <meta property="og:title" content="Mariage de Ilan & Sarah" />
+    <meta property="og:description" content="Mardi 23 Juin — Cérémonie civile à 14h30 puis Henné traditionnel à 19h00." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://precious-cat-b377b8.netlify.app/" />
+    <meta property="og:site_name" content="Ilan & Sarah" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:image" content="https://precious-cat-b377b8.netlify.app/assets/og-preview.jpg" />
+    <meta property="og:image:secure_url" content="https://precious-cat-b377b8.netlify.app/assets/og-preview.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ilan & Sarah — 23 juin 2026" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mariage de Ilan & Sarah" />
+    <meta name="twitter:description" content="Mardi 23 Juin — Cérémonie civile à 14h30 puis Henné traditionnel à 19h00." />
+    <meta name="twitter:image" content="https://precious-cat-b377b8.netlify.app/assets/og-preview.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Serif+Display&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Music start overlay -->
+    <div id="music-gate" class="music-gate" role="dialog" aria-label="Démarrer la musique">
+      <div class="music-gate__card">
+        <p class="music-gate__brand">I&amp;S</p>
+        <p class="music-gate__title">Bienvenue</p>
+        <p class="music-gate__subtitle">Une mélodie hébraïque accompagne ce faire-part.</p>
+        <button id="music-gate-btn" class="btn btn--solid" type="button">Entrer</button>
+        <button id="music-gate-skip" class="music-gate__skip" type="button">Continuer en silence</button>
+      </div>
+    </div>
+
+    <audio id="bg-music" src="assets/music.mp3" loop preload="auto"></audio>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <a href="#hero" class="topbar__brand" aria-label="Accueil">ILAN &amp; SARAH</a>
+
+      <nav class="topbar__nav" aria-label="Navigation principale">
+        <a href="#mariage">Le mariage</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#programme">Programme</a>
+        <a href="#hosts">Familles</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+
+      <div class="topbar__right">
+        <button id="music-toggle" class="topbar__icon-btn" type="button" aria-label="Activer / couper la musique">
+          <svg class="music-toggle__icon music-toggle__icon--on" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          <svg class="music-toggle__icon music-toggle__icon--off" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <circle cx="18" cy="16" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <line x1="3" y1="3" x2="22" y2="22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button id="menu-open" class="topbar__icon-btn topbar__menu" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- SIDE MENU (mobile) -->
+    <aside id="side-menu" class="side-menu" aria-hidden="true">
+      <button id="menu-close" class="side-menu__close" type="button" aria-label="Fermer le menu">×</button>
+      <nav class="side-menu__nav">
+        <a href="#hero">Accueil</a>
+        <a href="#mariage">Le mariage</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#programme">Programme</a>
+        <a href="#hosts">Familles</a>
+        <a href="#rsvp">RSVP</a>
+      </nav>
+      <p class="side-menu__brand">I&amp;S</p>
+    </aside>
+    <div id="menu-backdrop" class="menu-backdrop"></div>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="hero">
+        <div class="hero__photo" aria-hidden="true"></div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <span class="hero__bh" lang="he" dir="rtl">ב״ה</span>
+
+        <div class="hero__bottom">
+          <a href="#programme" class="btn btn--hero">Découvrir</a>
+
+          <div class="hero__countdown" aria-label="Compte à rebours jusqu'au mariage">
+            <div><span data-cd="days">00</span><small>Jours</small></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div><span data-cd="hours">00</span><small>Heures</small></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div><span data-cd="minutes">00</span><small>Minutes</small></div>
+            <span class="cd-sep" aria-hidden="true">:</span>
+            <div><span data-cd="seconds">00</span><small>Secondes</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTRO TERRACOTTA BAND -->
+      <section id="mariage" class="intro">
+        <div class="intro__inner">
+          <div class="intro__col">
+            <h2 class="intro__title">Le jour<br />du mariage</h2>
+            <p class="intro__date">Mardi 23 juin 2026</p>
+          </div>
+
+          <div class="intro__rings" aria-hidden="true">
+            <svg viewBox="0 0 200 140">
+              <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round">
+                <ellipse cx="80" cy="78" rx="42" ry="44" />
+                <ellipse cx="120" cy="78" rx="42" ry="44" />
+                <path d="M76 32 l3 -8 l-2 9 l8 -3 l-9 2 l3 8 l-3 -7 l-7 3 z" transform="translate(20 -10)"/>
+                <path d="M76 32 l3 -8 l-2 9 l8 -3 l-9 2 l3 8 l-3 -7 l-7 3 z" transform="translate(60 -8) scale(0.6)"/>
+                <path d="M76 32 l3 -8 l-2 9 l8 -3 l-9 2 l3 8 l-3 -7 l-7 3 z" transform="translate(100 4) scale(0.8)"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="intro__col intro__col--right">
+            <p class="intro__lede">Nous avons l'immense joie de vous inviter à célébrer notre mariage.</p>
+            <p class="intro__body">
+              Deux âmes, deux familles, une même histoire. Que cette journée soit à l'image
+              de notre amour&nbsp;: lumineuse, joyeuse et partagée avec ceux qui comptent le plus.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHOTOS -->
+      <section class="photos">
+        <div class="photos__inner">
+          <figure class="photos__card photos__card--mairie">
+            <div class="photos__img"></div>
+            <figcaption>Mairie de Saint-Maur</figcaption>
+          </figure>
+          <figure class="photos__card photos__card--hillel">
+            <div class="photos__img"></div>
+            <figcaption>Centre Hillel — La Varenne</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- PROGRAMME / VENUES -->
+      <section id="programme" class="programme">
+        <div class="programme__crest" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+            <polygon points="20,4 36,30 4,30" />
+            <polygon points="20,36 4,10 36,10" />
+          </svg>
+        </div>
+
+        <p class="programme__section-eyebrow">En France</p>
+
+        <div class="programme__inner">
+          <span class="programme__divider" aria-hidden="true">
+            <span class="programme__heart">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </span>
+          </span>
+
+          <div class="programme__col">
+            <p class="programme__eyebrow">Cérémonie civile</p>
+            <p class="programme__day">Mardi</p>
+            <h2 class="programme__date">23 JUIN</h2>
+            <p class="programme__time">à 14h30</p>
+            <p class="programme__venue">à la Mairie de Saint-Maur</p>
+            <p class="programme__address">Place Charles de Gaulle</p>
+            <p class="programme__address">94100 Saint-Maur-des-Fossés</p>
+            <div class="programme__actions">
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Mairie+de+Saint-Maur+Place+Charles+de+Gaulle+94100+Saint-Maur-des-Foss%C3%A9s">
+                Google Maps
+              </a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://waze.com/ul?q=Mairie+de+Saint-Maur+Place+Charles+de+Gaulle+94100+Saint-Maur-des-Foss%C3%A9s&navigate=yes">
+                Waze
+              </a>
+            </div>
+          </div>
+
+          <div class="programme__col">
+            <p class="programme__eyebrow">Henné traditionnel</p>
+            <p class="programme__day">À partir de</p>
+            <h2 class="programme__date">19H00</h2>
+            <p class="programme__venue">au Centre Hillel à La Varenne</p>
+            <p class="programme__address">Centre Communautaire Hillel</p>
+            <p class="programme__address">11 rue des Peupliers</p>
+            <p class="programme__address">94210 La Varenne Saint-Hilaire</p>
+            <div class="programme__actions">
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Centre+Hillel+11+rue+des+Peupliers+94210+La+Varenne+Saint-Hilaire">
+                Google Maps
+              </a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://waze.com/ul?q=11+rue+des+Peupliers+94210+La+Varenne+Saint-Hilaire&navigate=yes">
+                Waze
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="programme__section-eyebrow">Ensuite en Israël</p>
+
+        <div class="photos__inner programme__photos">
+          <figure class="photos__card photos__card--houppa">
+            <div class="photos__img"></div>
+            <figcaption>Salle YARA — Hadera</figcaption>
+          </figure>
+          <figure class="photos__card photos__card--chabbat">
+            <div class="photos__img"></div>
+            <figcaption>Kibbutz Eden Inn — Zikhron Yaakov</figcaption>
+          </figure>
+        </div>
+
+        <div class="programme__inner">
+          <span class="programme__divider" aria-hidden="true">
+            <span class="programme__heart">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </span>
+          </span>
+
+          <div class="programme__col">
+            <p class="programme__eyebrow">Houppa</p>
+            <p class="programme__day">Mardi</p>
+            <h2 class="programme__date">4 AOÛT</h2>
+            <p class="programme__time">à 18h00</p>
+            <p class="programme__venue">Salle YARA</p>
+            <p class="programme__address">Hadera, Israël</p>
+            <div class="programme__actions">
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Salle+YARA+Hadera+Israel">
+                Google Maps
+              </a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://waze.com/ul?q=Salle+YARA+Hadera+Israel&navigate=yes">
+                Waze
+              </a>
+            </div>
+          </div>
+
+          <div class="programme__col">
+            <p class="programme__eyebrow">Chabbat Hatan</p>
+            <p class="programme__day">Vendredi</p>
+            <h2 class="programme__date">7 AOÛT</h2>
+            <p class="programme__venue">Kibbutz Eden Inn</p>
+            <p class="programme__address">Zikhron Yaakov, Israël</p>
+            <div class="programme__actions">
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=Eden+Inn+Zikhron+Yaakov+Israel">
+                Google Maps
+              </a>
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://waze.com/ul?q=Eden+Inn+Zikhron+Yaakov+Israel&navigate=yes">
+                Waze
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="programme__cta">
+          <a href="#rsvp" class="btn btn--outline btn--lg">Calendrier et réponse</a>
+        </div>
+      </section>
+
+      <!-- COUPLE GALLERY -->
+      <section id="gallery" class="gallery">
+        <div class="gallery__head">
+          <p class="gallery__eyebrow">Notre histoire en images</p>
+          <h2 class="gallery__title">Quelques moments à deux</h2>
+        </div>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--1"><div class="gallery__img"></div></figure>
+          <figure class="gallery__item gallery__item--2"><div class="gallery__img"></div></figure>
+          <figure class="gallery__item gallery__item--3"><div class="gallery__img"></div></figure>
+          <figure class="gallery__item gallery__item--4"><div class="gallery__img"></div></figure>
+          <figure class="gallery__item gallery__item--5"><div class="gallery__img"></div></figure>
+          <figure class="gallery__item gallery__item--6"><div class="gallery__img"></div></figure>
+        </div>
+      </section>
+
+      <!-- HOSTS / FAMILIES -->
+      <section id="hosts" class="hosts">
+        <p class="hosts__intro">Vous êtes chaleureusement invités par</p>
+        <p class="hosts__name">Monsieur et Madame Gilles Zana</p>
+        <p class="hosts__et">et</p>
+        <p class="hosts__name">M. et Madame Jean-Claude Sultan</p>
+
+        <div class="hosts__divider" aria-hidden="true"></div>
+
+        <p class="hosts__hebrew" lang="he" dir="rtl">
+          שֶׁיִּהְיוּ חַיֵּיכֶם מְלֵאִים בְּאַהֲבָה, שִׂמְחָה וּבְרָכָה
+        </p>
+        <p class="hosts__hebrew-trans">« Que vos vies soient remplies d'amour, de joie et de bénédiction »</p>
+      </section>
+
+      <!-- FOOTER (RSVP + contact) -->
+      <footer id="rsvp" class="footer">
+        <div class="footer__inner">
+          <div class="footer__col footer__col--brand">
+            <p class="footer__brand">I&amp;S</p>
+            <a href="sms:?&body=Bonjour%20Ilan%20%26%20Sarah%2C%20je%20serai%20pr%C3%A9sent(e)%20%C3%A0%20votre%20mariage%20du%2023%20juin%20%E2%9C%A8" class="rsvp-pill">Répondre</a>
+            <p class="footer__copyright">© 2026 — Ilan &amp; Sarah</p>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__heading">Nous appeler</h3>
+            <ul class="footer__phones">
+              <li><span>Ilan</span><span class="dots"></span><a href="tel:+33600000000">06 00 00 00 00</a></li>
+              <li><span>Sarah</span><span class="dots"></span><a href="tel:+33600000000">06 00 00 00 00</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h3 class="footer__heading">Menu</h3>
+            <div class="footer__menu">
+              <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#mariage">Le mariage</a></li>
+                <li><a href="#programme">Programme</a></li>
+              </ul>
+              <ul>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#hosts">Familles</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+                <li>
+                  <a href="https://wa.me/?text=Bonjour%20Ilan%20%26%20Sarah%2C%20je%20serai%20pr%C3%A9sent(e)%20%E2%9C%A8" target="_blank" rel="noopener">WhatsApp</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer__hebrew" lang="he" dir="rtl">מַזָּל טוֹב</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
