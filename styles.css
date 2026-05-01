@@ -22,7 +22,7 @@
   --font-serif:      "Cormorant Garamond", "Cormorant", "Times New Roman", serif;
   --font-hebrew:     "Frank Ruhl Libre", "Cormorant Garamond", serif;
 
-  --topbar-h:        72px;
+  --topbar-h:        96px;
 }
 
 * { box-sizing: border-box; }
@@ -283,7 +283,7 @@ body.events-revealed .events {
   display: block;
 }
 .topbar__brand img {
-  height: 56px;
+  height: 84px;
   width: auto;
   display: block;
   mix-blend-mode: multiply;
@@ -838,7 +838,7 @@ body.events-revealed .events {
 
 @media (max-width: 720px) {
   .footer__inner { grid-template-columns: 1fr; gap: 32px; }
-  .topbar__brand img { height: 48px; }
+  .topbar__brand img { height: 68px; }
   .gallery__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
   .landing__countdown { gap: 14px; }

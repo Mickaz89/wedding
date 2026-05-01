@@ -123,7 +123,7 @@
   });
 
   /* -------------------- Smooth-scroll offset for fixed header -------------------- */
-  const TOPBAR = 72;
+  const TOPBAR = 96;
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href").slice(1);
