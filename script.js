@@ -9,10 +9,9 @@
   const MUSIC_START = 2.0; // seconds — skip silent intro of music.mp3
 
   const seekToStart = () => {
-    try { audio.currentTime = MUSIC_START; } catch { /* metadata not ready yet */ }
+    try { audio.currentTime = MUSIC_START; } catch { /* metadata not ready */ }
   };
 
-  // Manual loop so we restart at MUSIC_START instead of 0.
   audio.addEventListener("ended", () => {
     seekToStart();
     audio.play().catch(() => {});
@@ -37,17 +36,28 @@
     }
   };
 
-  // Try silent autoplay; most browsers block this without interaction.
-  (async () => {
-    try {
-      audio.volume = 0.55;
-      seekToStart();
-      await audio.play();
-      hideGate();
-    } catch {
-      /* gate stays */
+  // Dev-only: ?preview=1 dismisses the gate for screenshots / design QA.
+  const params = new URLSearchParams(location.search);
+  if (params.get("preview") === "1") {
+    hideGate();
+    toggle.classList.add("is-muted");
+    if (params.get("screen") === "events") {
+      // jump straight to the events screen
+      requestAnimationFrame(() => document.getElementById("open-events")?.click());
     }
-  })();
+  } else {
+    // Try silent autoplay; most browsers block this without interaction.
+    (async () => {
+      try {
+        audio.volume = 0.55;
+        seekToStart();
+        await audio.play();
+        hideGate();
+      } catch {
+        /* gate stays */
+      }
+    })();
+  }
 
   gateBtn.addEventListener("click", async () => {
     hideGate();
@@ -68,6 +78,20 @@
       toggle.classList.add("is-muted");
     }
   });
+
+  /* -------------------- Landing -> Events transition -------------------- */
+  const landing = document.getElementById("landing");
+  const openEventsBtn = document.getElementById("open-events");
+
+  const revealEvents = () => {
+    document.body.classList.remove("is-landing");
+    document.body.classList.add("events-revealed");
+    landing.classList.add("is-hidden");
+    // remove the landing fully after the fade so it doesn't trap touches
+    setTimeout(() => { landing.style.display = "none"; }, 750);
+  };
+
+  openEventsBtn.addEventListener("click", revealEvents);
 
   /* -------------------- Side menu -------------------- */
   const sideMenu = document.getElementById("side-menu");
@@ -99,7 +123,7 @@
   });
 
   /* -------------------- Smooth-scroll offset for fixed header -------------------- */
-  const TOPBAR = 76;
+  const TOPBAR = 72;
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href").slice(1);
@@ -113,8 +137,8 @@
   });
 
   /* -------------------- Countdown -------------------- */
-  // 2026-06-23 14:30 Europe/Paris (UTC+2 in June). 14:30 Paris = 12:30 UTC.
-  const TARGET = new Date("2026-06-23T12:30:00Z").getTime();
+  // 2026-06-23 13:30 Europe/Paris (UTC+2 in June). 13:30 Paris = 11:30 UTC.
+  const TARGET = new Date("2026-06-23T11:30:00Z").getTime();
 
   const cd = {
     days: document.querySelector('[data-cd="days"]'),
@@ -142,11 +166,15 @@
 
   /* -------------------- Reveal on scroll -------------------- */
   const revealTargets = document.querySelectorAll(
-    ".intro__col, .intro__rings, .photos__card, .programme__crest, .programme__section-eyebrow, .programme__col, .programme__cta, .gallery__head, .gallery__item, .hosts > *, .footer__col"
+    ".intro__col, .intro__rings, .programme__section-eyebrow, .event-section, .programme__cta, .gallery__head, .gallery__item, .hosts > *, .footer__col"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
 
-  if ("IntersectionObserver" in window) {
+  const previewMode = new URLSearchParams(location.search).get("preview") === "1";
+
+  if (previewMode) {
+    revealTargets.forEach((el) => el.classList.add("is-visible"));
+  } else if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
