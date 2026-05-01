@@ -482,29 +482,48 @@ body.events-revealed .events {
   align-items: center;
   gap: 10px;
   width: 100%;
-  max-width: 640px;
+  max-width: 720px;
+}
+
+.event-section__crest {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .event-section__logo {
-  width: auto;
-  max-width: 360px;
-  max-height: 280px;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
   object-fit: contain;
-  margin-bottom: 24px;
+  display: block;
   mix-blend-mode: multiply;
 }
 .event-section__logo--small {
-  max-width: 240px;
-  max-height: 220px;
+  width: 80%;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .event-section__title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   font-family: var(--font-script-bold);
   font-weight: 400;
-  font-size: clamp(72px, 11vw, 110px);
+  font-size: clamp(56px, 9vw, 92px);
   color: var(--ink-strong);
-  margin: 0 0 26px;
+  margin: 0;
   line-height: 1;
+  text-shadow: 0 2px 16px rgba(251, 246, 231, 0.7);
+  pointer-events: none;
+  width: 100%;
+  text-align: center;
 }
 
 .event-section__intro {
