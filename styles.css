@@ -445,22 +445,14 @@ body.events-revealed .events {
    ========================================================= */
 .programme {
   background: var(--bg-cream);
-  padding: 0 0 60px;
+  padding: 0 0 80px;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-.programme__section-eyebrow {
-  font-family: var(--font-script);
-  font-size: clamp(40px, 5.4vw, 56px);
-  color: var(--gold-deep);
-  margin: 70px 24px 10px;
-  line-height: 1;
-}
-
 .programme__cta {
-  margin: 30px auto 0;
+  margin: 50px auto 0;
   display: flex; justify-content: center;
   width: 100%;
 }
@@ -470,7 +462,7 @@ body.events-revealed .events {
    ========================================================= */
 .event-section {
   width: 100%;
-  padding: 70px 28px 80px;
+  padding: 100px 28px 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -479,14 +471,8 @@ body.events-revealed .events {
   scroll-margin-top: var(--topbar-h);
 }
 
-/* gentle alternating background to delineate sections without using cards */
-.event-section + .event-section {
-  background: var(--bg-cream-soft);
-}
-.event-section + .event-section + .event-section {
-  background: var(--bg-cream);
-}
-.event-section + .event-section + .event-section + .event-section {
+/* alternating background to delineate sections */
+.event-section:nth-of-type(even) {
   background: var(--bg-cream-soft);
 }
 
@@ -494,45 +480,45 @@ body.events-revealed .events {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   width: 100%;
-  max-width: 520px;
+  max-width: 640px;
 }
 
 .event-section__logo {
   width: auto;
-  max-width: 220px;
-  max-height: 150px;
+  max-width: 360px;
+  max-height: 280px;
   object-fit: contain;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
   mix-blend-mode: multiply;
 }
 .event-section__logo--small {
-  max-width: 150px;
-  max-height: 120px;
+  max-width: 240px;
+  max-height: 220px;
 }
 
 .event-section__title {
   font-family: var(--font-script-bold);
   font-weight: 400;
-  font-size: clamp(56px, 9vw, 76px);
+  font-size: clamp(72px, 11vw, 110px);
   color: var(--ink-strong);
-  margin: 0 0 18px;
+  margin: 0 0 26px;
   line-height: 1;
 }
 
 .event-section__intro {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 17px;
+  font-size: 19px;
   color: var(--ink);
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   line-height: 1.6;
 }
 .event-section__intro em {
   font-family: var(--font-script);
   font-style: normal;
-  font-size: 28px;
+  font-size: 32px;
   color: var(--gold-deep);
   display: inline-block;
   line-height: 1;
@@ -542,7 +528,7 @@ body.events-revealed .events {
 .event-section__day {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--ink);
   margin: 0;
 }
@@ -550,39 +536,39 @@ body.events-revealed .events {
 .event-section__date {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(34px, 5vw, 46px);
+  font-size: clamp(38px, 5.5vw, 56px);
   letter-spacing: 0.03em;
   color: var(--ink-strong);
-  margin: 4px 0 6px;
+  margin: 6px 0 10px;
   line-height: 1.1;
 }
 
 .event-section__date-hebrew {
   font-family: var(--font-hebrew);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gold-deep);
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   letter-spacing: 0.03em;
 }
 
 .event-section__time {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 18px;
-  margin: 0 0 14px;
+  font-size: 20px;
+  margin: 0 0 18px;
   color: var(--ink);
 }
 
 .event-section__venue {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 19px;
   color: var(--ink-strong);
   margin: 0;
 }
 
 .event-section__address {
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: 17px;
   color: var(--ink);
   margin: 0;
 }
