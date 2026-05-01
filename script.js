@@ -166,7 +166,7 @@
 
   /* -------------------- Reveal on scroll -------------------- */
   const revealTargets = document.querySelectorAll(
-    ".intro__col, .intro__rings, .programme__section-eyebrow, .event-section, .programme__cta, .gallery__head, .gallery__item, .hosts > *, .footer__col"
+    ".intro__inner > *, .event-section, .programme__cta, .gallery__head, .gallery__item, .hosts > *, .footer__col"
   );
   revealTargets.forEach((el) => el.classList.add("reveal"));
 
