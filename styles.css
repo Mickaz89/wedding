@@ -475,22 +475,58 @@ body.events-revealed .events {
    EVENT SECTION — full-width, logo at title level
    ========================================================= */
 .event-section {
+  position: relative;
   width: 100%;
-  padding: 100px 28px 110px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--topbar-h) + 24px) 28px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   color: var(--ink-strong);
   scroll-margin-top: var(--topbar-h);
+  background-color: var(--bg-cream-soft);
+  overflow: hidden;
 }
 
-/* alternating background to delineate sections */
-.event-section:nth-of-type(even) {
-  background: var(--bg-cream-soft);
+.event-section::before {
+  content: "";
+  position: absolute;
+  top: var(--topbar-h);
+  left: 0;
+  width: clamp(320px, 55vw, 640px);
+  aspect-ratio: 1 / 1;
+  background-image: url("design/ressources/background-top-left.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.event-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("design/ressources/background-bottom-left.png"),
+    url("design/ressources/right-background.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, bottom right;
+  background-size:
+    clamp(300px, 50vw, 600px) auto,
+    clamp(340px, 58vw, 680px) auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .event-section__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

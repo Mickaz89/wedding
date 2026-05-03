@@ -79,6 +79,32 @@
     }
   });
 
+  /* -------------------- Event filtering by URL -------------------- */
+  // ?events=mairie,henne hides the others. No param (or ?events=all) shows all.
+  const EVENT_IDS = ["mairie", "henne", "houppa", "chabbat"];
+  const eventsParam = new URLSearchParams(location.search).get("events");
+
+  let allowedEvents;
+  if (!eventsParam || eventsParam.toLowerCase() === "all") {
+    allowedEvents = new Set(EVENT_IDS);
+  } else {
+    allowedEvents = new Set(
+      eventsParam
+        .split(",")
+        .map((s) => s.trim().toLowerCase())
+        .filter((id) => EVENT_IDS.includes(id))
+    );
+    if (allowedEvents.size === 0) allowedEvents = new Set(EVENT_IDS);
+  }
+
+  EVENT_IDS.forEach((id) => {
+    if (allowedEvents.has(id)) return;
+    document.getElementById(`event-${id}`)?.remove();
+    document.querySelectorAll(`a[href="#event-${id}"]`).forEach((a) => {
+      (a.closest("li") || a).remove();
+    });
+  });
+
   /* -------------------- Landing -> Events transition -------------------- */
   const landing = document.getElementById("landing");
   const openEventsBtn = document.getElementById("open-events");
