@@ -580,18 +580,18 @@ body.events-revealed .events {
 .event-section__couple {
   font-family: var(--font-script-bold);
   font-weight: 400;
-  font-size: clamp(40px, 5.6vw, 68px);
+  font-size: clamp(48px, 7vw, 80px);
   color: var(--gold-deep);
-  margin: 4px 0 2px;
+  margin: 6px 0 2px;
   line-height: 1;
   letter-spacing: 0.01em;
 }
 
 .event-section__hebrew-names {
   font-family: var(--font-hebrew);
-  font-size: clamp(17px, 1.9vw, 22px);
+  font-size: clamp(18px, 2vw, 24px);
   color: var(--gold-deep);
-  margin: 0 0 10px;
+  margin: 0 0 16px;
   letter-spacing: 0.06em;
 }
 
@@ -631,29 +631,29 @@ body.events-revealed .events {
 .event-section__memorial {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(11px, 1.1vw, 13px);
+  font-size: clamp(13px, 1.25vw, 15px);
   color: var(--ink-soft);
-  line-height: 1.5;
-  margin: 10px 0 0;
+  line-height: 1.55;
+  margin: 14px 0 0;
   max-width: 540px;
 }
 
 .event-section__dress-code {
   font-family: var(--font-cinzel);
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin: 10px 0 0;
+  margin: 14px 0 0;
 }
 
 .event-section__intro {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(15px, 1.5vw, 18px);
+  font-size: clamp(16px, 1.7vw, 19px);
   color: var(--ink);
-  margin: 0 0 6px;
-  line-height: 1.5;
+  margin: 0 0 10px;
+  line-height: 1.55;
 }
 .event-section__intro em {
   font-family: var(--font-script);
@@ -716,16 +716,48 @@ body.events-revealed .events {
 
 .event-section__rsvp {
   font-family: var(--font-cinzel);
-  font-size: 10px;
-  letter-spacing: 0.22em;
+  font-size: 11px;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold-deep);
-  margin: 12px 0 0;
+  margin: 16px 0 0;
 }
 
 .event-section__actions {
   display: flex; gap: 10px; justify-content: center;
-  margin-top: 16px; flex-wrap: wrap;
+  margin-top: 22px; flex-wrap: wrap;
+}
+
+.event-section__split {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+.event-section__split-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.event-section--houppa .event-section__inner {
+  max-width: 1100px;
+}
+
+@media (min-width: 900px) {
+  .event-section--houppa .event-section__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(40px, 5vw, 80px);
+    align-items: start;
+    width: 100%;
+  }
+  .event-section--houppa .event-section__split-col {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 }
 
 /* =========================================================
