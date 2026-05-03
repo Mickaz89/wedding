@@ -202,6 +202,136 @@
     btn.addEventListener("click", handleAddToCalendar);
   });
 
+  /* -------------------- RSVP Modal + Google Sheet submit -------------------- */
+  // Paste your Apps Script Web App URL here after deploying apps-script.gs.
+  // Until set, the form will warn the user instead of silently failing.
+  const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwEn45J7nTP9jwowImybirqZZdCPGI6WN3M7-YnAQma1O9aPPaxJylnPrWvAU6lSLNQ/exec"; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+  const RSVP_TOKEN = "ilan-sarah-2026"; // must match TOKEN in apps-script.gs
+
+  const rsvpModal = document.getElementById("rsvp-modal");
+  const rsvpForm = document.getElementById("rsvp-form");
+  const rsvpFeedback = document.getElementById("rsvp-feedback");
+  const rsvpSubmit = document.getElementById("rsvp-submit");
+  const rsvpAttendingBlock = rsvpForm.querySelector("[data-rsvp-when-yes]");
+
+  // Pre-filter event checkboxes based on the URL invitation:
+  // - Events the user IS invited to → checkbox visible & pre-checked
+  // - Events the user is NOT invited to → label removed entirely
+  EVENT_IDS.forEach((id) => {
+    const label = rsvpForm.querySelector(`[data-event="${id}"]`);
+    if (!label) return;
+    if (allowedEvents.has(id)) {
+      label.querySelector("input").checked = true;
+    } else {
+      label.remove();
+    }
+  });
+
+  const openRSVP = () => {
+    rsvpModal.classList.add("is-open");
+    rsvpModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    setTimeout(() => rsvpForm.querySelector('input[name="name"]')?.focus(), 50);
+  };
+  const closeRSVP = () => {
+    rsvpModal.classList.remove("is-open");
+    rsvpModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  document.querySelectorAll(".js-rsvp-open").forEach((btn) => {
+    btn.addEventListener("click", openRSVP);
+  });
+  document.querySelectorAll("[data-rsvp-close]").forEach((el) => {
+    el.addEventListener("click", closeRSVP);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && rsvpModal.classList.contains("is-open")) closeRSVP();
+  });
+
+  // Show / hide event-attendance block based on yes/no radio
+  rsvpForm.querySelectorAll('input[name="attending"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      const yes = rsvpForm.querySelector('input[name="attending"][value="yes"]').checked;
+      rsvpAttendingBlock.classList.toggle("is-hidden", !yes);
+    });
+  });
+
+  rsvpForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    rsvpFeedback.textContent = "";
+    rsvpFeedback.classList.remove("is-error", "is-success");
+
+    const fd = new FormData(rsvpForm);
+    const name = (fd.get("name") || "").toString().trim();
+    if (!name) {
+      rsvpFeedback.textContent = "Merci d'indiquer votre nom.";
+      rsvpFeedback.classList.add("is-error");
+      return;
+    }
+
+    const attending = fd.get("attending");
+    const events = fd.getAll("events");
+    if (attending === "yes" && events.length === 0) {
+      rsvpFeedback.textContent = "Veuillez sélectionner au moins un événement.";
+      rsvpFeedback.classList.add("is-error");
+      return;
+    }
+
+    const payload = {
+      token: RSVP_TOKEN,
+      name,
+      phone: (fd.get("phone") || "").toString().trim(),
+      attending,
+      guests: attending === "yes" ? Number(fd.get("guests")) || 1 : 0,
+      events: attending === "yes" ? events : [],
+      invited: Array.from(allowedEvents),
+      dietary: (fd.get("dietary") || "").toString().trim(),
+      message: (fd.get("message") || "").toString().trim(),
+      honeypot: (fd.get("hp") || "").toString(),
+      userAgent: navigator.userAgent,
+      submittedAt: new Date().toISOString(),
+    };
+
+    if (!RSVP_ENDPOINT) {
+      rsvpFeedback.textContent =
+        "Le formulaire n'est pas encore activé. Merci de contacter Sarah & Ilan directement.";
+      rsvpFeedback.classList.add("is-error");
+      return;
+    }
+
+    rsvpSubmit.disabled = true;
+    rsvpSubmit.textContent = "Envoi en cours…";
+
+    try {
+      // text/plain keeps the request "simple" (no CORS preflight). Apps Script
+      // reads e.postData.contents regardless of the content-type.
+      await fetch(RSVP_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(payload),
+      });
+
+      rsvpFeedback.textContent = "Merci, votre réponse est enregistrée 🌿";
+      rsvpFeedback.classList.add("is-success");
+      rsvpForm.reset();
+      // Re-apply pre-checks so reopening shows correct state
+      EVENT_IDS.forEach((id) => {
+        if (!allowedEvents.has(id)) return;
+        const cb = rsvpForm.querySelector(`[data-event="${id}"] input`);
+        if (cb) cb.checked = true;
+      });
+      rsvpAttendingBlock.classList.remove("is-hidden");
+      setTimeout(closeRSVP, 1800);
+    } catch (err) {
+      rsvpFeedback.textContent = "Une erreur est survenue. Merci de réessayer.";
+      rsvpFeedback.classList.add("is-error");
+    } finally {
+      rsvpSubmit.disabled = false;
+      rsvpSubmit.textContent = "Envoyer ma réponse";
+    }
+  });
+
   /* -------------------- Landing -> Events transition -------------------- */
   const landing = document.getElementById("landing");
   const openEventsBtn = document.getElementById("open-events");
