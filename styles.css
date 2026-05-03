@@ -736,13 +736,25 @@ body.events-revealed .events {
 /* Houppa — bespoke layout matching the printed invite */
 .event-section--houppa .event-section__inner {
   max-width: 760px;
-  gap: 6px;
+  gap: 0;
+}
+
+/* Keep families in 2 columns even on mobile (matches printed invite) */
+.event-section--houppa .event-section__hosts-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 4px clamp(16px, 4vw, 48px);
+  max-width: 520px;
+  margin: 4px auto 8px;
+}
+
+.event-section--houppa .event-section__intro {
+  margin: 0 0 6px;
 }
 
 .event-section__hebrew-banner {
-  width: clamp(280px, 60vw, 560px);
+  width: clamp(260px, 56vw, 520px);
   height: auto;
-  margin: 0 auto 12px;
+  margin: 0 auto 4px;
   display: block;
   mix-blend-mode: multiply;
 }
@@ -752,7 +764,7 @@ body.events-revealed .events {
   font-weight: 400;
   font-size: clamp(40px, 5.5vw, 64px);
   color: var(--ink-strong);
-  margin: 0 0 18px;
+  margin: 0 0 8px;
   line-height: 1;
   letter-spacing: 0.01em;
 }
@@ -761,7 +773,7 @@ body.events-revealed .events {
   position: relative;
   width: 100%;
   max-width: 600px;
-  margin: 18px auto 18px;
+  margin: 6px auto 6px;
   aspect-ratio: 5 / 4;
   display: flex;
   align-items: center;
@@ -794,8 +806,16 @@ body.events-revealed .events {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(40px, 7vw, 70px);
+  gap: clamp(28px, 5vw, 60px);
 }
+
+.event-section--houppa .event-section__date { margin: 8px 0 2px; }
+.event-section--houppa .event-section__date-hebrew { margin: 0 0 6px; }
+.event-section--houppa .event-section__time { margin: 0 0 4px; }
+.event-section--houppa .event-section__memorial { margin: 12px 0 0; }
+.event-section--houppa .event-section__dress-code { margin: 12px 0 0; }
+.event-section--houppa .event-section__rsvp { margin: 10px 0 0; }
+.event-section--houppa .event-section__actions { margin-top: 14px; }
 
 .event-section__chuppa-fr {
   font-family: var(--font-script-bold);
