@@ -105,6 +105,99 @@
     });
   });
 
+  /* -------------------- Add to calendar (.ics) -------------------- */
+  // Times are stored in UTC. Paris = UTC+2 in June (CEST), Israel = UTC+3 in August (IDT).
+  const CALENDAR_EVENTS = {
+    mairie: {
+      title: "Mariage Sarah & Ilan — Mairie",
+      description: "Sarah & Ilan se diront « Oui » à la mairie de Saint-Maur.",
+      location: "Mairie de Saint-Maur, Av. Charles de Gaulle, 94100 Saint-Maur-des-Fossés",
+      start: "20260623T113000Z", // 13:30 Paris (CEST)
+      end:   "20260623T130000Z", // 15:00 Paris
+    },
+    henne: {
+      title: "Mariage Sarah & Ilan — Henné",
+      description: "Soirée Henné de Sarah & Ilan.",
+      location: "Les salons du Centre Hillel, 10bis avenue du Château, 94210 La Varenne",
+      start: "20260623T173000Z", // 19:30 Paris
+      end:   "20260623T213000Z", // 23:30 Paris
+    },
+    houppa: {
+      title: "Mariage Sarah & Ilan — Houppa & soirée",
+      description: "Houppa et soirée du mariage de Sarah & Ilan.",
+      location: "Salons Yara, Hadera, Israël",
+      start: "20260804T150000Z", // 18:00 Israel (IDT)
+      end:   "20260804T220000Z", // 01:00 +1 Israel
+    },
+    chabbat: {
+      title: "Mariage Sarah & Ilan — Chabbat Hatan",
+      description: "Chabbat Hatan en l'honneur de Sarah & Ilan.",
+      location: "Hôtel Eden Inn, Derekh Aharon 2, Zichron Yaacov, Israël",
+      start: "20260807T150000Z", // 18:00 Friday Israel
+      end:   "20260808T180000Z", // 21:00 Saturday Israel
+    },
+  };
+
+  const escapeICS = (s) =>
+    String(s)
+      .replace(/\\/g, "\\\\")
+      .replace(/\n/g, "\\n")
+      .replace(/,/g, "\\,")
+      .replace(/;/g, "\\;");
+
+  const buildICS = (ids) => {
+    const dtstamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+    const lines = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Sarah & Ilan//Wedding//FR",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
+    ];
+    ids.forEach((id) => {
+      const ev = CALENDAR_EVENTS[id];
+      if (!ev) return;
+      lines.push(
+        "BEGIN:VEVENT",
+        `UID:sarah-ilan-${id}@wedding`,
+        `DTSTAMP:${dtstamp}`,
+        `DTSTART:${ev.start}`,
+        `DTEND:${ev.end}`,
+        `SUMMARY:${escapeICS(ev.title)}`,
+        `LOCATION:${escapeICS(ev.location)}`,
+        `DESCRIPTION:${escapeICS(ev.description)}`,
+        "END:VEVENT"
+      );
+    });
+    lines.push("END:VCALENDAR");
+    return lines.join("\r\n");
+  };
+
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  document.getElementById("add-to-calendar")?.addEventListener("click", () => {
+    const ids = EVENT_IDS.filter((id) => allowedEvents.has(id));
+    if (ids.length === 0) return;
+    const ics = buildICS(ids);
+    const filename = ids.length === 1 ? `sarah-ilan-${ids[0]}.ics` : "sarah-ilan-mariage.ics";
+
+    if (isIOS) {
+      // Safari/iOS opens the file directly in the Calendar app prompt.
+      window.location.href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+      return;
+    }
+
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+
   /* -------------------- Landing -> Events transition -------------------- */
   const landing = document.getElementById("landing");
   const openEventsBtn = document.getElementById("open-events");
