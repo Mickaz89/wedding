@@ -80,13 +80,16 @@
   });
 
   /* -------------------- Event filtering by URL -------------------- */
-  // ?events=mairie,henne hides the others. No param (or ?events=all) shows all.
+  // Default (no param) shows Mairie only. Use ?events=all for the full wedding,
+  // or a comma-separated subset like ?events=mairie,henne.
   const EVENT_IDS = ["mairie", "henne", "houppa", "chabbat"];
   const eventsParam = new URLSearchParams(location.search).get("events");
 
   let allowedEvents;
-  if (!eventsParam || eventsParam.toLowerCase() === "all") {
+  if (eventsParam && eventsParam.toLowerCase() === "all") {
     allowedEvents = new Set(EVENT_IDS);
+  } else if (!eventsParam) {
+    allowedEvents = new Set(["mairie"]);
   } else {
     allowedEvents = new Set(
       eventsParam
@@ -94,7 +97,7 @@
         .map((s) => s.trim().toLowerCase())
         .filter((id) => EVENT_IDS.includes(id))
     );
-    if (allowedEvents.size === 0) allowedEvents = new Set(EVENT_IDS);
+    if (allowedEvents.size === 0) allowedEvents = new Set(["mairie"]);
   }
 
   EVENT_IDS.forEach((id) => {
