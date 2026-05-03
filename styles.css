@@ -788,29 +788,27 @@ body.events-revealed .events {
 }
 
 .event-section__chuppa {
-  position: relative;
   width: 100%;
   max-width: 600px;
-  margin: 6px auto 6px;
-  aspect-ratio: 5 / 4;
-  display: flex;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: "stack";
   align-items: center;
-  justify-content: center;
+  justify-items: stretch;
 }
 
 .event-section__chuppa-bg {
-  position: absolute;
-  inset: 0;
+  grid-area: stack;
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: contain;
   mix-blend-mode: multiply;
-  z-index: 0;
   pointer-events: none;
 }
 
 .event-section__chuppa-names {
-  position: relative;
+  grid-area: stack;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -824,7 +822,10 @@ body.events-revealed .events {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(28px, 5vw, 60px);
+  justify-content: space-between;
+  align-self: stretch;
+  padding: clamp(14px, 3vw, 28px) 0;
+  gap: 0;
 }
 
 .event-section--houppa .event-section__date { margin: 8px 0 2px; }
