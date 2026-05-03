@@ -205,7 +205,7 @@
   /* -------------------- RSVP Modal + Google Sheet submit -------------------- */
   // Paste your Apps Script Web App URL here after deploying apps-script.gs.
   // Until set, the form will warn the user instead of silently failing.
-  const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwEn45J7nTP9jwowImybirqZZdCPGI6WN3M7-YnAQma1O9aPPaxJylnPrWvAU6lSLNQ/exec"; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
+  const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbxF5vVOTuwexCNH9_3SQMy0Ar9b6X8QBl6_4gg537sKByz8m9Q7z_8KV79EA-z2MBzS/exec"; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
   const RSVP_TOKEN = "ilan-sarah-2026"; // must match TOKEN in apps-script.gs
 
   const rsvpModal = document.getElementById("rsvp-modal");
