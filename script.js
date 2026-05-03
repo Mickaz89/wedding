@@ -175,7 +175,7 @@
 
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-  document.getElementById("add-to-calendar")?.addEventListener("click", () => {
+  const handleAddToCalendar = () => {
     const ids = EVENT_IDS.filter((id) => allowedEvents.has(id));
     if (ids.length === 0) return;
     const ics = buildICS(ids);
@@ -196,6 +196,10 @@
     a.click();
     document.body.removeChild(a);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
+  document.querySelectorAll(".js-add-to-calendar").forEach((btn) => {
+    btn.addEventListener("click", handleAddToCalendar);
   });
 
   /* -------------------- Landing -> Events transition -------------------- */

@@ -467,9 +467,27 @@ body.events-revealed .events {
 
 .programme__cta {
   margin: 50px auto 0;
-  display: flex; justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
   width: 100%;
 }
+.programme__cta-eyebrow {
+  font-family: var(--font-cinzel);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0;
+}
+
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn--icon svg { display: block; }
 
 /* =========================================================
    EVENT SECTION — full-width, logo at title level
@@ -990,21 +1008,40 @@ body.events-revealed .events {
   line-height: 1;
 }
 
+.footer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
 .rsvp-pill {
-  align-self: flex-start;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--ink-strong);
   color: var(--paper);
   text-decoration: none;
-  padding: 13px 30px;
+  padding: 13px 26px;
   border-radius: 999px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: 12px;
   font-family: var(--font-cinzel);
-  transition: background 0.3s;
+  font-weight: 500;
+  border: 1px solid var(--ink-strong);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
-.rsvp-pill:hover { background: var(--gold-deep); }
+.rsvp-pill:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+
+.rsvp-pill--alt {
+  background: var(--gold-deep);
+  border-color: var(--gold-deep);
+  color: var(--paper);
+}
+.rsvp-pill--alt:hover { background: var(--ink-strong); border-color: var(--ink-strong); }
+.rsvp-pill--alt svg { display: block; }
 
 .footer__copyright {
   font-size: 13px; color: var(--ink-soft);
