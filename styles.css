@@ -746,6 +746,22 @@ body.events-revealed .events {
   margin: 16px 0 0;
 }
 
+.event-section__rsvp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(155, 124, 65, 0.4);
+  padding-bottom: 2px;
+  transition: color 0.25s, border-color 0.25s;
+}
+.event-section__rsvp-link:hover {
+  color: var(--ink-strong);
+  border-bottom-color: var(--ink-strong);
+}
+.event-section__rsvp-link svg { display: block; }
+
 .event-section__actions {
   display: flex; gap: 10px; justify-content: center;
   margin-top: 22px; flex-wrap: wrap;
