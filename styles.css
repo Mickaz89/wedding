@@ -1174,6 +1174,27 @@ body.events-revealed .events {
 .lang-switch--lg .lang-switch__btn { padding: 0 18px; font-size: 12px; min-width: 48px; }
 .lang-switch--lg .lang-switch__btn[lang="he"] { font-size: 16px; }
 
+.lang-switch--onDark {
+  border-color: rgba(255, 255, 255, 0.78);
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.lang-switch--onDark .lang-switch__btn { color: rgba(255, 255, 255, 0.95); }
+.lang-switch--onDark .lang-switch__btn + .lang-switch__btn { border-left-color: rgba(255, 255, 255, 0.55); }
+.lang-switch--onDark .lang-switch__btn:hover { background: rgba(255, 255, 255, 0.18); }
+.lang-switch--onDark .lang-switch__btn.is-active {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink-strong);
+}
+
+.landing__lang {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  z-index: 2;
+}
+
 .footer__lang { display: flex; flex-direction: column; gap: 10px; }
 .footer__lang-eyebrow {
   font-family: var(--font-cinzel);
