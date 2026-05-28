@@ -40,6 +40,12 @@
     <!-- Music start overlay -->
     <div id="music-gate" class="music-gate" role="dialog" data-i18n-attr="aria-label:music.ariaLabel" aria-label="Démarrer la musique">
       <div class="music-gate__card">
+        <div class="music-gate__lang">
+          <div class="lang-switch" role="group" aria-label="Langue / שפה">
+            <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-switch__btn" data-lang="he" lang="he">עב</button>
+          </div>
+        </div>
         <p class="music-gate__brand" data-i18n="music.brand">Sarah &amp; Ilan</p>
         <p class="music-gate__title" data-i18n="music.title">Bienvenue</p>
         <p class="music-gate__subtitle" data-i18n="music.subtitle">Une mélodie hébraïque accompagne ce faire-part.</p>
@@ -56,13 +62,6 @@
       <div class="landing__overlay" aria-hidden="true"></div>
 
       <span class="landing__bh" lang="he" dir="rtl">בס״ד</span>
-
-      <div class="landing__lang">
-        <div class="lang-switch lang-switch--onDark" role="group" aria-label="Langue / שפה">
-          <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
-          <button type="button" class="lang-switch__btn" data-lang="he" lang="he">עב</button>
-        </div>
-      </div>
 
       <div class="landing__inner">
         <h1 class="landing__title">Sarah &amp; Ilan</h1>
