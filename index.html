@@ -32,6 +32,7 @@
       rel="stylesheet"
     />
 
+    <script src="i18n.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="is-landing">
@@ -83,6 +84,10 @@
 
         <div class="topbar__right">
           <span class="topbar__bh" lang="he" dir="rtl" aria-hidden="true">בס״ד</span>
+          <div class="lang-switch" role="group" aria-label="Langue / שפה">
+            <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-switch__btn" data-lang="he" lang="he">עב</button>
+          </div>
           <button id="music-toggle" class="topbar__icon-btn" type="button" aria-label="Activer / couper la musique">
             <svg class="music-toggle__icon music-toggle__icon--on" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -317,6 +322,13 @@
                   </svg>
                   Ajouter au calendrier
                 </button>
+              </div>
+              <div class="footer__lang">
+                <p class="footer__lang-eyebrow">Langue · שפה</p>
+                <div class="lang-switch lang-switch--lg" role="group" aria-label="Langue / שפה">
+                  <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
+                  <button type="button" class="lang-switch__btn" data-lang="he" lang="he">עב</button>
+                </div>
               </div>
             </div>
 
