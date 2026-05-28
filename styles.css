@@ -1121,6 +1121,70 @@ body.events-revealed .events {
 }
 
 /* =========================================================
+   Language switch (FR / עב)
+   ========================================================= */
+:lang(he),
+[lang="he"] {
+  font-family: var(--font-hebrew);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--ink-strong);
+  border-radius: 999px;
+  overflow: hidden;
+  background: transparent;
+  height: 32px;
+  font-family: var(--font-cinzel);
+  letter-spacing: 0.12em;
+}
+
+.lang-switch__btn {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--ink-strong);
+  padding: 0 12px;
+  font-size: 11px;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+}
+.lang-switch__btn + .lang-switch__btn {
+  border-left: 1px solid var(--ink-strong);
+}
+.lang-switch__btn[lang="he"] {
+  font-family: var(--font-hebrew);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+.lang-switch__btn:hover { background: rgba(47, 74, 48, 0.08); }
+.lang-switch__btn.is-active {
+  background: var(--ink-strong);
+  color: var(--paper);
+}
+
+.lang-switch--lg { height: 42px; }
+.lang-switch--lg .lang-switch__btn { padding: 0 18px; font-size: 12px; min-width: 48px; }
+.lang-switch--lg .lang-switch__btn[lang="he"] { font-size: 16px; }
+
+.footer__lang { display: flex; flex-direction: column; gap: 10px; }
+.footer__lang-eyebrow {
+  font-family: var(--font-cinzel);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* =========================================================
    Reveal-on-scroll
    ========================================================= */
 .reveal {
