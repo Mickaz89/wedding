@@ -359,75 +359,75 @@
     <div id="rsvp-modal" class="rsvp-modal" aria-hidden="true">
       <div class="rsvp-modal__backdrop" data-rsvp-close></div>
       <div class="rsvp-modal__panel" role="dialog" aria-modal="true" aria-labelledby="rsvp-modal-title">
-        <button class="rsvp-modal__close" type="button" data-rsvp-close aria-label="Fermer">×</button>
-        <p class="rsvp-modal__eyebrow">Confirmer votre présence</p>
-        <p class="rsvp-modal__brand">Sarah &amp; Ilan</p>
+        <button class="rsvp-modal__close" type="button" data-rsvp-close data-i18n-attr="aria-label:rsvp.close" aria-label="Fermer">×</button>
+        <p class="rsvp-modal__eyebrow" data-i18n="rsvp.eyebrow">Confirmer votre présence</p>
+        <p class="rsvp-modal__brand" data-i18n="rsvp.brand">Sarah &amp; Ilan</p>
 
         <form id="rsvp-form" class="rsvp-form" novalidate>
           <input type="text" name="hp" tabindex="-1" autocomplete="off" class="rsvp-form__hp" aria-hidden="true" />
 
           <label class="rsvp-form__label">
-            <span>Nom complet *</span>
+            <span data-i18n="rsvp.nameLabel">Nom complet *</span>
             <input type="text" name="name" required autocomplete="name" />
           </label>
 
           <label class="rsvp-form__label">
-            <span>Téléphone</span>
-            <input type="tel" name="phone" autocomplete="tel" placeholder="06 …" />
+            <span data-i18n="rsvp.phoneLabel">Téléphone</span>
+            <input type="tel" name="phone" autocomplete="tel" data-i18n-attr="placeholder:rsvp.phonePlaceholder" placeholder="06 …" />
           </label>
 
           <fieldset class="rsvp-form__fieldset">
-            <legend>Présence</legend>
+            <legend data-i18n="rsvp.presenceLegend">Présence</legend>
             <label class="rsvp-form__radio">
               <input type="radio" name="attending" value="yes" checked />
-              <span>Je serai présent(e)</span>
+              <span data-i18n="rsvp.attendingYes">Je serai présent(e)</span>
             </label>
             <label class="rsvp-form__radio">
               <input type="radio" name="attending" value="no" />
-              <span>Je ne pourrai pas venir</span>
+              <span data-i18n="rsvp.attendingNo">Je ne pourrai pas venir</span>
             </label>
           </fieldset>
 
           <div class="rsvp-form__attending" data-rsvp-when-yes>
             <label class="rsvp-form__label">
-              <span>Nombre de personnes</span>
+              <span data-i18n="rsvp.guestsLabel">Nombre de personnes</span>
               <input type="number" name="guests" min="1" max="20" value="1" />
             </label>
 
             <fieldset class="rsvp-form__fieldset" id="rsvp-events-fieldset">
-              <legend>Événements auxquels je serai présent(e)</legend>
+              <legend data-i18n="rsvp.eventsLegend">Événements auxquels je serai présent(e)</legend>
               <label class="rsvp-form__check" data-event="mairie">
                 <input type="checkbox" name="events" value="mairie" />
-                <span>Mairie — 23 juin 2026</span>
+                <span data-i18n="rsvp.event.mairie">Mairie — 23 juin 2026</span>
               </label>
               <label class="rsvp-form__check" data-event="henne">
                 <input type="checkbox" name="events" value="henne" />
-                <span>Henné — 23 juin 2026</span>
+                <span data-i18n="rsvp.event.henne">Henné — 23 juin 2026</span>
               </label>
               <label class="rsvp-form__check" data-event="houppa">
                 <input type="checkbox" name="events" value="houppa" />
-                <span>Houppa &amp; soirée — 4 août 2026</span>
+                <span data-i18n="rsvp.event.houppa">Houppa &amp; soirée — 4 août 2026</span>
               </label>
               <label class="rsvp-form__check" data-event="chabbat">
                 <input type="checkbox" name="events" value="chabbat" />
-                <span>Chabbat Hatan — 7 août 2026</span>
+                <span data-i18n="rsvp.event.chabbat">Chabbat Hatan — 7 août 2026</span>
               </label>
             </fieldset>
 
             <label class="rsvp-form__label">
-              <span>Allergies / régime alimentaire</span>
+              <span data-i18n="rsvp.dietaryLabel">Allergies / régime alimentaire</span>
               <textarea name="dietary" rows="2"></textarea>
             </label>
           </div>
 
           <label class="rsvp-form__label">
-            <span>Message pour Sarah &amp; Ilan</span>
+            <span data-i18n="rsvp.messageLabel">Message pour Sarah &amp; Ilan</span>
             <textarea name="message" rows="3"></textarea>
           </label>
 
           <p class="rsvp-form__feedback" id="rsvp-feedback" aria-live="polite"></p>
 
-          <button class="btn btn--solid btn--lg" type="submit" id="rsvp-submit">Envoyer ma réponse</button>
+          <button class="btn btn--solid btn--lg" type="submit" id="rsvp-submit" data-i18n="rsvp.submit">Envoyer ma réponse</button>
         </form>
       </div>
     </div>

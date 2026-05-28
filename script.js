@@ -224,6 +224,8 @@
   const RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbxF5vVOTuwexCNH9_3SQMy0Ar9b6X8QBl6_4gg537sKByz8m9Q7z_8KV79EA-z2MBzS/exec"; // e.g. "https://script.google.com/macros/s/AKfy.../exec"
   const RSVP_TOKEN = "ilan-sarah-2026"; // must match TOKEN in apps-script.gs
 
+  const t = (key) => (window.WeddingI18n ? window.WeddingI18n.t(key) : key);
+
   const rsvpModal = document.getElementById("rsvp-modal");
   const rsvpForm = document.getElementById("rsvp-form");
   const rsvpFeedback = document.getElementById("rsvp-feedback");
@@ -281,7 +283,7 @@
     const fd = new FormData(rsvpForm);
     const name = (fd.get("name") || "").toString().trim();
     if (!name) {
-      rsvpFeedback.textContent = "Merci d'indiquer votre nom.";
+      rsvpFeedback.textContent = t("rsvp.errorName");
       rsvpFeedback.classList.add("is-error");
       return;
     }
@@ -289,7 +291,7 @@
     const attending = fd.get("attending");
     const events = fd.getAll("events");
     if (attending === "yes" && events.length === 0) {
-      rsvpFeedback.textContent = "Veuillez sélectionner au moins un événement.";
+      rsvpFeedback.textContent = t("rsvp.errorEvents");
       rsvpFeedback.classList.add("is-error");
       return;
     }
@@ -310,14 +312,13 @@
     };
 
     if (!RSVP_ENDPOINT) {
-      rsvpFeedback.textContent =
-        "Le formulaire n'est pas encore activé. Merci de contacter Sarah & Ilan directement.";
+      rsvpFeedback.textContent = t("rsvp.errorNotActive");
       rsvpFeedback.classList.add("is-error");
       return;
     }
 
     rsvpSubmit.disabled = true;
-    rsvpSubmit.textContent = "Envoi en cours…";
+    rsvpSubmit.textContent = t("rsvp.submitSending");
 
     try {
       // text/plain keeps the request "simple" (no CORS preflight). Apps Script
@@ -328,7 +329,7 @@
         body: JSON.stringify(payload),
       });
 
-      rsvpFeedback.textContent = "Merci, votre réponse est enregistrée 🌿";
+      rsvpFeedback.textContent = t("rsvp.success");
       rsvpFeedback.classList.add("is-success");
       rsvpForm.reset();
       // Re-apply pre-checks so reopening shows correct state
@@ -340,11 +341,11 @@
       rsvpAttendingBlock.classList.remove("is-hidden");
       setTimeout(closeRSVP, 1800);
     } catch (err) {
-      rsvpFeedback.textContent = "Une erreur est survenue. Merci de réessayer.";
+      rsvpFeedback.textContent = t("rsvp.errorGeneric");
       rsvpFeedback.classList.add("is-error");
     } finally {
       rsvpSubmit.disabled = false;
-      rsvpSubmit.textContent = "Envoyer ma réponse";
+      rsvpSubmit.textContent = t("rsvp.submit");
     }
   });
 
