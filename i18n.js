@@ -6,8 +6,66 @@
 
   // Translations are filled in by subsequent tasks. Keys are dotted IDs.
   const TRANSLATIONS = {
-    fr: {},
-    he: {},
+    fr: {
+      "meta.title": "Sarah & Ilan — Notre mariage",
+      "meta.description": "C'est avec une immense joie que nous vous invitons à célébrer notre mariage — Sarah & Ilan.",
+      "meta.ogTitle": "Mariage de Sarah & Ilan",
+      "meta.ogDescription": "Mairie le 23 juin 2026 — Henné le soir — Houppa le 4 août en Israël — Chabbat Hatan le 7 août.",
+      "meta.ogLocale": "fr_FR",
+      "meta.ogLocaleAlternate": "he_IL",
+      "meta.ogImageAlt": "Sarah & Ilan — 23 juin 2026",
+      "meta.twitterTitle": "Mariage de Sarah & Ilan",
+      "meta.twitterDescription": "Notre mariage — Sarah & Ilan.",
+
+      "music.ariaLabel": "Démarrer la musique",
+      "music.brand": "Sarah & Ilan",
+      "music.title": "Bienvenue",
+      "music.subtitle": "Une mélodie hébraïque accompagne ce faire-part.",
+      "music.enter": "Entrer",
+      "music.skip": "Continuer en silence",
+      "music.toggleAria": "Activer / couper la musique",
+
+      "landing.countdownAria": "Compte à rebours jusqu'au mariage",
+      "landing.days": "Jours",
+      "landing.hours": "Heures",
+      "landing.minutes": "Minutes",
+      "landing.seconds": "Secondes",
+      "landing.cta": "Voir la carte",
+
+      "menu.openLabel": "Ouvrir le menu",
+      "menu.closeLabel": "Fermer le menu",
+      "menu.homeLabel": "Accueil",
+    },
+    he: {
+      "meta.title": "שרה ואילן — החתונה שלנו",
+      "meta.description": "בשמחה רבה אנו מזמינים אתכם לחגוג עמנו את חתונתנו — שרה ואילן.",
+      "meta.ogTitle": "חתונת שרה ואילן",
+      "meta.ogDescription": "טקס אזרחי 23 ביוני 2026 — חינה בערב — חופה ב-4 באוגוסט בישראל — שבת חתן ב-7 באוגוסט.",
+      "meta.ogLocale": "he_IL",
+      "meta.ogLocaleAlternate": "fr_FR",
+      "meta.ogImageAlt": "שרה ואילן — 23 ביוני 2026",
+      "meta.twitterTitle": "חתונת שרה ואילן",
+      "meta.twitterDescription": "החתונה שלנו — שרה ואילן.",
+
+      "music.ariaLabel": "הפעלת המוזיקה",
+      "music.brand": "שרה ואילן",
+      "music.title": "ברוכים הבאים",
+      "music.subtitle": "מנגינה עברית מלווה את ההזמנה הזו.",
+      "music.enter": "להיכנס",
+      "music.skip": "להמשיך בשקט",
+      "music.toggleAria": "הפעלת / השתקת המוזיקה",
+
+      "landing.countdownAria": "ספירה לאחור עד לחתונה",
+      "landing.days": "ימים",
+      "landing.hours": "שעות",
+      "landing.minutes": "דקות",
+      "landing.seconds": "שניות",
+      "landing.cta": "לצפייה בהזמנה",
+
+      "menu.openLabel": "פתיחת התפריט",
+      "menu.closeLabel": "סגירת התפריט",
+      "menu.homeLabel": "דף הבית",
+    },
   };
 
   const isSupported = (l) => SUPPORTED.includes(l);

@@ -4,25 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#2f4a30" />
-    <title>Sarah & Ilan — Notre mariage</title>
-    <meta name="description" content="C'est avec une immense joie que nous vous invitons à célébrer notre mariage — Sarah & Ilan." />
+    <title data-i18n="meta.title">Sarah & Ilan — Notre mariage</title>
+    <meta name="description" data-i18n-attr="content:meta.description" content="C'est avec une immense joie que nous vous invitons à célébrer notre mariage — Sarah & Ilan." />
 
-    <meta property="og:title" content="Mariage de Sarah & Ilan" />
-    <meta property="og:description" content="Mairie le 23 juin 2026 — Henné le soir — Houppa le 4 août en Israël — Chabbat Hatan le 7 août." />
+    <meta property="og:title" data-i18n-attr="content:meta.ogTitle" content="Mariage de Sarah & Ilan" />
+    <meta property="og:description" data-i18n-attr="content:meta.ogDescription" content="Mairie le 23 juin 2026 — Henné le soir — Houppa le 4 août en Israël — Chabbat Hatan le 7 août." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://profound-bonbon-3e46b7.netlify.app/" />
     <meta property="og:site_name" content="Sarah & Ilan" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" data-i18n-attr="content:meta.ogLocale" content="fr_FR" />
+    <meta property="og:locale:alternate" data-i18n-attr="content:meta.ogLocaleAlternate" content="he_IL" />
     <meta property="og:image" content="https://profound-bonbon-3e46b7.netlify.app/assets/og-preview.jpg" />
     <meta property="og:image:secure_url" content="https://profound-bonbon-3e46b7.netlify.app/assets/og-preview.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Sarah & Ilan — 23 juin 2026" />
+    <meta property="og:image:alt" data-i18n-attr="content:meta.ogImageAlt" content="Sarah & Ilan — 23 juin 2026" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mariage de Sarah & Ilan" />
-    <meta name="twitter:description" content="Notre mariage — Sarah & Ilan." />
+    <meta name="twitter:title" data-i18n-attr="content:meta.twitterTitle" content="Mariage de Sarah & Ilan" />
+    <meta name="twitter:description" data-i18n-attr="content:meta.twitterDescription" content="Notre mariage — Sarah & Ilan." />
     <meta name="twitter:image" content="https://profound-bonbon-3e46b7.netlify.app/assets/og-preview.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,13 +38,13 @@
   </head>
   <body class="is-landing">
     <!-- Music start overlay -->
-    <div id="music-gate" class="music-gate" role="dialog" aria-label="Démarrer la musique">
+    <div id="music-gate" class="music-gate" role="dialog" data-i18n-attr="aria-label:music.ariaLabel" aria-label="Démarrer la musique">
       <div class="music-gate__card">
-        <p class="music-gate__brand">Sarah &amp; Ilan</p>
-        <p class="music-gate__title">Bienvenue</p>
-        <p class="music-gate__subtitle">Une mélodie hébraïque accompagne ce faire-part.</p>
-        <button id="music-gate-btn" class="btn btn--solid" type="button">Entrer</button>
-        <button id="music-gate-skip" class="music-gate__skip" type="button">Continuer en silence</button>
+        <p class="music-gate__brand" data-i18n="music.brand">Sarah &amp; Ilan</p>
+        <p class="music-gate__title" data-i18n="music.title">Bienvenue</p>
+        <p class="music-gate__subtitle" data-i18n="music.subtitle">Une mélodie hébraïque accompagne ce faire-part.</p>
+        <button id="music-gate-btn" class="btn btn--solid" type="button" data-i18n="music.enter">Entrer</button>
+        <button id="music-gate-skip" class="music-gate__skip" type="button" data-i18n="music.skip">Continuer en silence</button>
       </div>
     </div>
 
@@ -59,14 +60,14 @@
       <div class="landing__inner">
         <h1 class="landing__title">Sarah &amp; Ilan</h1>
 
-        <div class="landing__countdown" aria-label="Compte à rebours jusqu'au mariage">
-          <div><span data-cd="days">00</span><small>Jours</small></div>
-          <div><span data-cd="hours">00</span><small>Heures</small></div>
-          <div><span data-cd="minutes">00</span><small>Minutes</small></div>
-          <div><span data-cd="seconds">00</span><small>Secondes</small></div>
+        <div class="landing__countdown" data-i18n-attr="aria-label:landing.countdownAria" aria-label="Compte à rebours jusqu'au mariage">
+          <div><span data-cd="days">00</span><small data-i18n="landing.days">Jours</small></div>
+          <div><span data-cd="hours">00</span><small data-i18n="landing.hours">Heures</small></div>
+          <div><span data-cd="minutes">00</span><small data-i18n="landing.minutes">Minutes</small></div>
+          <div><span data-cd="seconds">00</span><small data-i18n="landing.seconds">Secondes</small></div>
         </div>
 
-        <button id="open-events" class="btn btn--landing" type="button">Voir la carte</button>
+        <button id="open-events" class="btn btn--landing" type="button" data-i18n="landing.cta">Voir la carte</button>
       </div>
     </section>
 
@@ -74,11 +75,11 @@
     <div id="events" class="events" aria-hidden="true">
       <!-- TOP BAR -->
       <header class="topbar">
-        <button id="menu-open" class="topbar__icon-btn topbar__menu" type="button" aria-label="Ouvrir le menu">
+        <button id="menu-open" class="topbar__icon-btn topbar__menu" type="button" data-i18n-attr="aria-label:menu.openLabel" aria-label="Ouvrir le menu">
           <span></span><span></span><span></span>
         </button>
 
-        <a href="#hero" class="topbar__brand" aria-label="Accueil">
+        <a href="#hero" class="topbar__brand" data-i18n-attr="aria-label:menu.homeLabel" aria-label="Accueil">
           <img src="design/ressources/wedding-logo.png" alt="Sarah & Ilan" />
         </a>
 
@@ -88,7 +89,7 @@
             <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
             <button type="button" class="lang-switch__btn" data-lang="he" lang="he">עב</button>
           </div>
-          <button id="music-toggle" class="topbar__icon-btn" type="button" aria-label="Activer / couper la musique">
+          <button id="music-toggle" class="topbar__icon-btn" type="button" data-i18n-attr="aria-label:music.toggleAria" aria-label="Activer / couper la musique">
             <svg class="music-toggle__icon music-toggle__icon--on" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M9 18V5l12-2v13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               <circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
@@ -106,7 +107,7 @@
 
       <!-- SIDE MENU -->
       <aside id="side-menu" class="side-menu" aria-hidden="true">
-        <button id="menu-close" class="side-menu__close" type="button" aria-label="Fermer le menu">×</button>
+        <button id="menu-close" class="side-menu__close" type="button" data-i18n-attr="aria-label:menu.closeLabel" aria-label="Fermer le menu">×</button>
         <img class="side-menu__logo" src="design/ressources/wedding-logo.png" alt="" aria-hidden="true" />
         <nav class="side-menu__nav">
           <a href="#hero">Accueil</a>
