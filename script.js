@@ -125,30 +125,30 @@
   // Times are stored in UTC. Paris = UTC+2 in June (CEST), Israel = UTC+3 in August (IDT).
   const CALENDAR_EVENTS = {
     mairie: {
-      title: "Mariage Sarah & Ilan — Mairie",
-      description: "Sarah & Ilan se diront « Oui » à la mairie de Saint-Maur.",
-      location: "Mairie de Saint-Maur, Av. Charles de Gaulle, 94100 Saint-Maur-des-Fossés",
+      titleKey: "ics.mairie.title",
+      descriptionKey: "ics.mairie.description",
+      locationKey: "ics.mairie.location",
       start: "20260623T113000Z", // 13:30 Paris (CEST)
       end:   "20260623T130000Z", // 15:00 Paris
     },
     henne: {
-      title: "Mariage Sarah & Ilan — Henné",
-      description: "Soirée Henné de Sarah & Ilan.",
-      location: "Les salons du Centre Hillel, 10bis avenue du Château, 94210 La Varenne",
+      titleKey: "ics.henne.title",
+      descriptionKey: "ics.henne.description",
+      locationKey: "ics.henne.location",
       start: "20260623T173000Z", // 19:30 Paris
       end:   "20260623T213000Z", // 23:30 Paris
     },
     houppa: {
-      title: "Mariage Sarah & Ilan — Houppa & soirée",
-      description: "Houppa et soirée du mariage de Sarah & Ilan.",
-      location: "Salons Yara, Hadera, Israël",
+      titleKey: "ics.houppa.title",
+      descriptionKey: "ics.houppa.description",
+      locationKey: "ics.houppa.location",
       start: "20260804T150000Z", // 18:00 Israel (IDT)
       end:   "20260804T220000Z", // 01:00 +1 Israel
     },
     chabbat: {
-      title: "Mariage Sarah & Ilan — Chabbat Hatan",
-      description: "Chabbat Hatan en l'honneur de Sarah & Ilan.",
-      location: "Hôtel Eden Inn, Derekh Aharon 2, Zichron Yaacov, Israël",
+      titleKey: "ics.chabbat.title",
+      descriptionKey: "ics.chabbat.description",
+      locationKey: "ics.chabbat.location",
       start: "20260807T150000Z", // 18:00 Friday Israel
       end:   "20260808T180000Z", // 21:00 Saturday Israel
     },
@@ -179,9 +179,9 @@
         `DTSTAMP:${dtstamp}`,
         `DTSTART:${ev.start}`,
         `DTEND:${ev.end}`,
-        `SUMMARY:${escapeICS(ev.title)}`,
-        `LOCATION:${escapeICS(ev.location)}`,
-        `DESCRIPTION:${escapeICS(ev.description)}`,
+        `SUMMARY:${escapeICS(t(ev.titleKey))}`,
+        `LOCATION:${escapeICS(t(ev.locationKey))}`,
+        `DESCRIPTION:${escapeICS(t(ev.descriptionKey))}`,
         "END:VEVENT"
       );
     });
