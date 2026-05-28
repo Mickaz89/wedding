@@ -1393,3 +1393,60 @@ body.events-revealed .events {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* =========================================================
+   RTL overrides — applied when <html dir="rtl">
+   ========================================================= */
+
+/* Side menu slides in from the right */
+[dir="rtl"] .side-menu {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid rgba(184, 151, 89, 0.3);
+  transform: translateX(100%);
+}
+[dir="rtl"] .side-menu.is-open { transform: translateX(0); }
+[dir="rtl"] .side-menu__close {
+  right: auto;
+  left: 16px;
+}
+[dir="rtl"] .side-menu__nav a:hover {
+  padding-left: 0;
+  padding-right: 8px;
+}
+
+/* Topbar: hamburger on the right, music + lang on the left */
+[dir="rtl"] .topbar { flex-direction: row-reverse; }
+[dir="rtl"] .topbar__bh { margin-right: 0; margin-left: 4px; }
+
+/* Countdown reads right-to-left so ימים sits on the right */
+[dir="rtl"] .landing__countdown { flex-direction: row-reverse; }
+
+/* Hosts grid (Houppa) — columns flip */
+[dir="rtl"] .event-section--houppa .event-section__hosts-grid { direction: rtl; }
+
+/* Icon buttons (calendar, WhatsApp): icon on the right of label */
+[dir="rtl"] .btn--icon,
+[dir="rtl"] .rsvp-pill,
+[dir="rtl"] .event-section__rsvp-link {
+  flex-direction: row-reverse;
+}
+
+/* Footer brand column / menu column flip */
+[dir="rtl"] .footer__inner { direction: rtl; }
+[dir="rtl"] .footer__phones span:first-child {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* RSVP modal close button on the left in RTL */
+[dir="rtl"] .rsvp-modal__close {
+  right: auto;
+  left: 14px;
+}
+
+/* Ensure latin couple names stay LTR-isolated inside RTL paragraphs */
+[dir="rtl"] [data-i18n-html] span[dir="ltr"] {
+  unicode-bidi: isolate;
+}
