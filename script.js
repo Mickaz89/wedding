@@ -108,6 +108,19 @@
     });
   });
 
+  /* -------------------- WhatsApp link localization -------------------- */
+  const WA_PHONE = "972548658419";
+  const updateWhatsappLink = () => {
+    const link = document.querySelector(".js-whatsapp-deborah");
+    if (!link) return;
+    const text = window.WeddingI18n
+      ? window.WeddingI18n.t("chabbat.whatsappText")
+      : "Bonjour Deborah, je souhaite réserver pour le Chabbat Hatan de Sarah & Ilan ✨";
+    link.href = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+  };
+  updateWhatsappLink();
+  document.addEventListener("languagechange", updateWhatsappLink);
+
   /* -------------------- Add to calendar (.ics) -------------------- */
   // Times are stored in UTC. Paris = UTC+2 in June (CEST), Israel = UTC+3 in August (IDT).
   const CALENDAR_EVENTS = {

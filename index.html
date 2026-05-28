@@ -248,37 +248,37 @@
             <div class="event-section__inner">
               <div class="event-section__crest">
                 <img class="event-section__logo event-section__logo--small" src="design/ressources/chabat-logo.png" alt="" aria-hidden="true" />
-                <h2 class="event-section__title">Chabbat Hatan</h2>
+                <h2 class="event-section__title" data-i18n="chabbat.title">Chabbat Hatan</h2>
               </div>
-              <p class="event-section__day">Vendredi</p>
-              <p class="event-section__date">7 Août 2026</p>
-              <p class="event-section__venue">Hôtel Eden Inn</p>
-              <p class="event-section__address">Derekh Aharon 2</p>
-              <p class="event-section__address">Zichron Yaacov, Israël</p>
+              <p class="event-section__day" data-i18n="chabbat.day">Vendredi</p>
+              <p class="event-section__date" data-i18n="chabbat.date">7 Août 2026</p>
+              <p class="event-section__venue" data-i18n="chabbat.venue">Hôtel Eden Inn</p>
+              <p class="event-section__address" data-i18n="chabbat.address1">Derekh Aharon 2</p>
+              <p class="event-section__address" data-i18n="chabbat.address2">Zichron Yaacov, Israël</p>
               <p class="event-section__rsvp">
-                <a class="event-section__rsvp-link" target="_blank" rel="noopener"
+                <a class="event-section__rsvp-link js-whatsapp-deborah" target="_blank" rel="noopener"
                    href="https://wa.me/972548658419?text=Bonjour%20Deborah%2C%20je%20souhaite%20r%C3%A9server%20pour%20le%20Chabbat%20Hatan%20de%20Sarah%20%26%20Ilan%20%E2%9C%A8">
                   <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
                     <path fill="currentColor" d="M20.52 3.48A11.78 11.78 0 0 0 12.04 0C5.49 0 .15 5.34.15 11.89c0 2.1.55 4.14 1.6 5.95L0 24l6.32-1.66a11.86 11.86 0 0 0 5.71 1.46h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.41-8.43Zm-8.48 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.81 9.81 0 0 1 2.89 6.99c0 5.45-4.43 9.88-9.88 9.88Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35Z"/>
                   </svg>
-                  Réservations auprès de Deborah
+                  <span data-i18n="chabbat.rsvpLink">Réservations auprès de Deborah</span>
                 </a>
               </p>
               <div class="event-section__actions">
                 <a class="btn btn--ghost" target="_blank" rel="noopener"
                    href="https://www.google.com/maps/search/?api=1&query=Eden+Inn+Derekh+Aharon+2+Zichron+Yaacov">
-                  Google Maps
+                  <span data-i18n="common.maps">Google Maps</span>
                 </a>
                 <a class="btn btn--ghost" target="_blank" rel="noopener"
                    href="https://waze.com/ul?q=Derekh+Aharon+2+Zichron+Yaacov&navigate=yes">
-                  Waze
+                  <span data-i18n="common.waze">Waze</span>
                 </a>
               </div>
             </div>
           </article>
 
           <div class="programme__cta">
-            <p class="programme__cta-eyebrow">Gardez la date</p>
+            <p class="programme__cta-eyebrow" data-i18n="cta.saveTheDate">Gardez la date</p>
             <button class="btn btn--solid btn--lg btn--icon js-add-to-calendar" type="button">
               <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
                 <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
@@ -286,7 +286,7 @@
                 <line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                 <line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
               </svg>
-              Ajouter au calendrier
+              <span data-i18n="cta.addCalendar">Ajouter au calendrier</span>
             </button>
           </div>
         </section>
@@ -294,8 +294,8 @@
         <!-- COUPLE GALLERY -->
         <section id="gallery" class="gallery">
           <div class="gallery__head">
-            <p class="gallery__eyebrow">Notre histoire en images</p>
-            <h2 class="gallery__title">Quelques moments à deux</h2>
+            <p class="gallery__eyebrow" data-i18n="gallery.eyebrow">Notre histoire en images</p>
+            <h2 class="gallery__title" data-i18n="gallery.title">Quelques moments à deux</h2>
           </div>
           <div class="gallery__grid">
             <figure class="gallery__item gallery__item--1"><div class="gallery__img"></div></figure>
@@ -313,7 +313,7 @@
             <div class="footer__col footer__col--brand">
               <p class="footer__brand">Sarah &amp; Ilan</p>
               <div class="footer__actions">
-                <button class="rsvp-pill js-rsvp-open" type="button">Répondre</button>
+                <button class="rsvp-pill js-rsvp-open" type="button" data-i18n="footer.respond">Répondre</button>
                 <button class="rsvp-pill rsvp-pill--alt js-add-to-calendar" type="button">
                   <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
                     <rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
@@ -321,11 +321,11 @@
                     <line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                     <line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
                   </svg>
-                  Ajouter au calendrier
+                  <span data-i18n="cta.addCalendar">Ajouter au calendrier</span>
                 </button>
               </div>
               <div class="footer__lang">
-                <p class="footer__lang-eyebrow">Langue · שפה</p>
+                <p class="footer__lang-eyebrow" data-i18n="footer.langEyebrow">Langue · שפה</p>
                 <div class="lang-switch lang-switch--lg" role="group" aria-label="Langue / שפה">
                   <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
                   <button type="button" class="lang-switch__btn" data-lang="he" lang="he">עב</button>
@@ -334,17 +334,17 @@
             </div>
 
             <div class="footer__col">
-              <h3 class="footer__heading">Menu</h3>
+              <h3 class="footer__heading" data-i18n="footer.menu">Menu</h3>
               <div class="footer__menu">
                 <ul>
-                  <li><a href="#hero">Accueil</a></li>
-                  <li><a href="#event-mairie">Mairie</a></li>
-                  <li><a href="#event-henne">Henné</a></li>
-                  <li><a href="#event-houppa">Houppa</a></li>
+                  <li><a href="#hero" data-i18n="nav.home">Accueil</a></li>
+                  <li><a href="#event-mairie" data-i18n="nav.mairie">Mairie</a></li>
+                  <li><a href="#event-henne" data-i18n="nav.henne">Henné</a></li>
+                  <li><a href="#event-houppa" data-i18n="nav.houppa">Houppa</a></li>
                 </ul>
                 <ul>
-                  <li><a href="#event-chabbat">Chabbat</a></li>
-                  <li><a href="#gallery">Galerie</a></li>
+                  <li><a href="#event-chabbat" data-i18n="nav.chabbat">Chabbat</a></li>
+                  <li><a href="#gallery" data-i18n="nav.gallery">Galerie</a></li>
                 </ul>
               </div>
             </div>

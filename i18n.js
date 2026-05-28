@@ -76,6 +76,25 @@
       "houppa.memorial": "En ce jour de joie, une pensée émue se tourne vers nos grands-parents partis trop tôt&nbsp;:<br />\npapi Simon et mamie Camille Zana,<br />\npapi Jacob et mami Rachel Bouganim,<br />\nainsi que papi Elie Abitbol,<br />\npapi Alphonse et mamie André Sultan.",
       "houppa.dressCode": "Une tenue tsniout réjouira les mariés",
       "houppa.rsvp": "Réponse souhaitée a.s.a.p",
+
+      "chabbat.title": "Chabbat Hatan",
+      "chabbat.day": "Vendredi",
+      "chabbat.date": "7 Août 2026",
+      "chabbat.venue": "Hôtel Eden Inn",
+      "chabbat.address1": "Derekh Aharon 2",
+      "chabbat.address2": "Zichron Yaacov, Israël",
+      "chabbat.rsvpLink": "Réservations auprès de Deborah",
+      "chabbat.whatsappText": "Bonjour Deborah, je souhaite réserver pour le Chabbat Hatan de Sarah & Ilan ✨",
+
+      "cta.saveTheDate": "Gardez la date",
+      "cta.addCalendar": "Ajouter au calendrier",
+
+      "gallery.eyebrow": "Notre histoire en images",
+      "gallery.title": "Quelques moments à deux",
+
+      "footer.respond": "Répondre",
+      "footer.menu": "Menu",
+      "footer.langEyebrow": "Langue · שפה",
     },
     he: {
       "meta.title": "שרה ואילן — החתונה שלנו",
@@ -147,6 +166,25 @@
       "houppa.memorial": "ביום שמחה זה, מחשבה נרגשת לסבים וסבתות שאינם עמנו:<br />\nסבא סימון וסבתא קמיל זנה ז״ל,<br />\nסבא יעקב וסבתא רחל בוגנים ז״ל,<br />\nסבא אלי אביטבול ז״ל,<br />\nסבא אלפונס וסבתא אנדריי סולטן ז״ל.",
       "houppa.dressCode": "לבוש צנוע ישמח את החתן והכלה",
       "houppa.rsvp": "נא לאשר הגעה בהקדם",
+
+      "chabbat.title": "שבת חתן",
+      "chabbat.day": "יום שישי",
+      "chabbat.date": "7 באוגוסט 2026",
+      "chabbat.venue": "מלון עדן אין",
+      "chabbat.address1": "דרך אהרון 2",
+      "chabbat.address2": "זכרון יעקב, ישראל",
+      "chabbat.rsvpLink": "להזמנות אצל דבורה",
+      "chabbat.whatsappText": "שלום דבורה, אני רוצה להזמין מקום לשבת חתן של שרה ואילן ✨",
+
+      "cta.saveTheDate": "שמרו את התאריך",
+      "cta.addCalendar": "הוספה ליומן",
+
+      "gallery.eyebrow": "הסיפור שלנו בתמונות",
+      "gallery.title": "כמה רגעים יחד",
+
+      "footer.respond": "אישור הגעה",
+      "footer.menu": "תפריט",
+      "footer.langEyebrow": "שפה · Langue",
     },
   };
 
